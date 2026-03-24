@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RadarNames — Premium Domain Brokerage</title>
+  <meta name="description" content="RadarNames acquires, curates, and brokers premium domain names for brands, startups, and enterprises worldwide.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◎</text></svg>">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0a0a0a;--fg:#e8e8e8;--muted:#888;--accent:#4f9cf7;
+      --card:#141414;--border:#222;--radius:8px;
+    }
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+      background:var(--bg);color:var(--fg);line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      background:rgba(10,10,10,.85);border-bottom:1px solid var(--border);
+    }
+    nav .inner{
+      max-width:1100px;margin:0 auto;padding:1rem 2rem;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{font-size:1.15rem;font-weight:700;letter-spacing:-.02em;color:var(--fg);text-decoration:none}
+    .logo span{color:var(--accent)}
+    nav a.cta{
+      font-size:.85rem;padding:.55rem 1.3rem;border-radius:var(--radius);
+      background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+      transition:opacity .2s;
+    }
+    nav a.cta:hover{opacity:.85}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;text-align:center;
+      padding:6rem 2rem 4rem;
+      background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(79,156,247,.08),transparent);
+    }
+    .hero h1{
+      font-size:clamp(2.4rem,5vw,4rem);font-weight:800;
+      letter-spacing:-.03em;line-height:1.1;margin-bottom:1.2rem;
+    }
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .hero p{
+      font-size:1.15rem;color:var(--muted);max-width:540px;margin-bottom:2.5rem;
+    }
+    .hero .btn-group{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .btn{
+      display:inline-block;padding:.75rem 2rem;border-radius:var(--radius);
+      font-size:.95rem;font-weight:600;text-decoration:none;transition:all .2s;
+    }
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{opacity:.85}
+    .btn-outline{border:1px solid var(--border);color:var(--fg);background:transparent}
+    .btn-outline:hover{border-color:var(--muted)}
+
+    /* SECTIONS */
+    section{padding:5rem 2rem}
+    .container{max-width:1100px;margin:0 auto}
+    .section-label{
+      font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;
+      color:var(--accent);font-weight:600;margin-bottom:.75rem;
+    }
+    .section-title{
+      font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;
+      letter-spacing:-.02em;margin-bottom:1rem;
+    }
+    .section-subtitle{color:var(--muted);font-size:1.05rem;max-width:560px;margin-bottom:3rem}
+
+    /* SERVICES GRID */
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:2rem;transition:border-color .2s;
+    }
+    .card:hover{border-color:var(--muted)}
+    .card .icon{font-size:1.6rem;margin-bottom:1rem}
+    .card h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+    .card p{color:var(--muted);font-size:.92rem}
+
+    /* STATS */
+    .stats{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:1.5rem;text-align:center;padding:3rem 0;
+      border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    }
+    .stat-num{font-size:2.2rem;font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+    .stat-label{font-size:.85rem;color:var(--muted);margin-top:.25rem}
+
+    /* PROCESS */
+    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;counter-reset:step}
+    .step{position:relative;padding-left:2.5rem}
+    .step::before{
+      counter-increment:step;content:counter(step);
+      position:absolute;left:0;top:.1rem;
+      width:1.8rem;height:1.8rem;border-radius:50%;
+      background:var(--accent);color:#fff;font-size:.8rem;font-weight:700;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .step h4{font-size:1rem;font-weight:600;margin-bottom:.35rem}
+    .step p{font-size:.88rem;color:var(--muted)}
+
+    /* CTA */
+    .cta-section{text-align:center;padding:6rem 2rem}
+    .cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1rem}
+    .cta-section p{color:var(--muted);font-size:1.05rem;max-width:480px;margin:0 auto 2.5rem}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--border);padding:2.5rem 2rem;
+      text-align:center;color:var(--muted);font-size:.82rem;
+    }
+    footer a{color:var(--muted);text-decoration:none}
+    footer a:hover{color:var(--fg)}
+
+    /* RESPONSIVE */
+    @media(max-width:640px){
+      nav .inner{padding:.85rem 1.2rem}
+      section{padding:3.5rem 1.2rem}
+      .cta-section{padding:4rem 1.2rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="inner">
+      <a href="/" class="logo">Radar<span>Names</span></a>
+      <a href="mailto:deals@radarnames.com" class="cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Premium Domain<br><em>Brokerage</em></h1>
+    <p>We acquire, curate, and broker high-value domain names for brands, startups, and enterprises worldwide.</p>
+    <div class="btn-group">
+      <a href="mailto:deals@radarnames.com" class="btn btn-primary">Inquire About a Domain</a>
+      <a href="#services" class="btn btn-outline">Our Services</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section>
+    <div class="container">
+      <div class="stats">
+        <div><div class="stat-num">200+</div><div class="stat-label">Domains Evaluated Monthly</div></div>
+        <div><div class="stat-num">30+</div><div class="stat-label">Premium Domains</div></div>
+        <div><div class="stat-num">24h</div><div class="stat-label">Response Time</div></div>
+        <div><div class="stat-num">Global</div><div class="stat-label">Client Reach</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-label">Services</div>
+      <h2 class="section-title">What We Do</h2>
+      <p class="section-subtitle">From sourcing to closing, we handle every aspect of premium domain acquisition and sales.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">◎</div>
+          <h3>Domain Acquisition</h3>
+          <p>We identify and secure high-potential domains before they hit the open market, leveraging proprietary scanning and market intelligence.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⬡</div>
+          <h3>Brokerage &amp; Sales</h3>
+          <p>Direct outreach to exact-match buyers. We connect premium domains with the brands and companies that need them most.</p>
+        </div>
+        <div class="card">
+          <div class="icon">△</div>
+          <h3>Portfolio Advisory</h3>
+          <p>Strategic guidance on domain portfolio management, valuation, and monetization for investors and businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="container">
+      <div class="section-label">Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">A streamlined approach from inquiry to transfer.</p>
+      <div class="process-steps">
+        <div class="step">
+          <h4>Inquiry</h4>
+          <p>Tell us the domain you're interested in or describe your ideal name.</p>
+        </div>
+        <div class="step">
+          <h4>Evaluation</h4>
+          <p>We assess availability, market value, and strategic fit for your brand.</p>
+        </div>
+        <div class="step">
+          <h4>Negotiation</h4>
+          <p>Our team handles all negotiations to secure the best possible terms.</p>
+        </div>
+        <div class="step">
+          <h4>Transfer</h4>
+          <p>Secure, escrow-protected domain transfer with full documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Secure<br>Your Perfect Domain?</h2>
+    <p>Whether you're looking to buy, sell, or get expert advice on domain strategy — we're here to help.</p>
+    <a href="mailto:deals@radarnames.com" class="btn btn-primary">deals@radarnames.com</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 RadarNames. All rights reserved. &nbsp;·&nbsp; <a href="mailto:deals@radarnames.com">deals@radarnames.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
